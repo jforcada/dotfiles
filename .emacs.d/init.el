@@ -1,0 +1,53 @@
+;; init.el
+;; Author: Jaime Forcada Balaguer - jforcada
+;; Email: jaime.forcada.balaguer@gmail.com
+
+;; TODO
+;; - Hidding the welcome screen on startup
+;; - Scale text with C-+ C--
+;; - Add hook to couple symbols per major mode
+;; - Mark vertical line for char limit
+;; - Customizable indentation
+;; - Don't activate mark when caps lock
+;; - Pair tags in html mode
+;; - Full screen, text centered mode
+
+;; Define the directories to load resources from
+(defvar emacs.d-dir (file-name-directory load-file-name))
+(add-to-list 'load-path (concat emacs.d-dir "./general"))
+(add-to-list 'load-path (concat emacs.d-dir "./themes"))
+(add-to-list 'custom-theme-load-path (concat emacs.d-dir "./themes"))
+
+;; ------- General configuration -------
+
+;; Disable tabs indentation by default...
+(setq-default indent-tabs-mode nil)
+;; ... if major mode forces tabs, set them to width=2
+(setq-default tab-width 2)
+
+;; Assure that special input (like accent marks) works
+(require 'iso-transl)
+
+;; Set up keybindings
+(require 'generic-key-bindings)
+(add-global-keybinding-pair-paren)
+(add-global-keybinding-pair-curly-brace)
+(add-global-keybinding-pair-double-quote)
+
+;; Activate generic ui configuration
+(require 'ui-config)
+
+;; -----------------------------------
+
+;; ------- Theme configuration -------
+;; Set up theme
+(custom-set-variables
+ '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+(custom-set-faces)
+(load-theme 'gotham t)
+
+;; Setup font
+(add-to-list 'default-frame-alist
+             '(font . "Ubuntu Mono-12"))
+
+;; -----------------------------------
