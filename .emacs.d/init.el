@@ -50,7 +50,7 @@
 
 ;; Setup font
 (add-to-list 'default-frame-alist
-             '(font . "Ubuntu Mono-12"))
+             '(font . "Ubuntu Mono-12:weight=medium"))
 ;; -----------------------------------
 
 ;; ------- Setup MELPA repository -------
