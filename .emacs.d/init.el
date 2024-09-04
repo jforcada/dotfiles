@@ -3,9 +3,6 @@
 ;; Email: jaime.forcada.balaguer@gmail.com
 
 ;; TODO
-;; - Hidding the welcome screen on startup
-;; - Scale text with C-+ C--
-;; - Add hook to couple symbols per major mode
 ;; - Mark vertical line for char limit
 ;; - Customizable indentation
 ;; - Don't activate mark when caps lock
@@ -36,8 +33,12 @@
 
 ;; Activate generic ui configuration
 (require 'ui-config)
-
 ;; -----------------------------------
+
+;; ------- Keybindings -------
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+;; ---------------------------
 
 ;; ------- Theme configuration -------
 ;; Set up theme
@@ -49,5 +50,11 @@
 ;; Setup font
 (add-to-list 'default-frame-alist
              '(font . "Ubuntu Mono-12"))
-
 ;; -----------------------------------
+
+;; ------- Setup MELPA repository -------
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(package-initialize)
+;; --------------------------------------
