@@ -4,6 +4,7 @@
 
 ;; TODO
 ;; - Mark vertical line for char limit
+;;   - https://emacs.stackexchange.com/questions/147/how-can-i-get-a-ruler-at-column-80
 ;; - Customizable indentation
 ;; - Don't activate mark when caps lock
 ;; - Pair tags in html mode
