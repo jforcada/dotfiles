@@ -1,0 +1,8 @@
+! Smooth fonts in emacs
+! to update within the session run:
+! $ xrdb -merge .Xdefaults
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
