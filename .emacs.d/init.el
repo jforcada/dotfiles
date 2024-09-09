@@ -34,28 +34,50 @@
 
 ;; Activate generic ui configuration
 (require 'ui-config)
+
 ;; -----------------------------------
 
 ;; ------- Keybindings -------
+
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+
 ;; ---------------------------
 
 ;; ------- Theme configuration -------
 ;; Set up theme
 (custom-set-variables
- '(custom-safe-themes (quote ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
-(custom-set-faces)
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
+     default))
+ '(package-selected-packages nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 (load-theme 'gotham t)
 
 ;; Setup font
 (add-to-list 'default-frame-alist
              '(font . "Ubuntu Mono-12:weight=medium"))
+
 ;; -----------------------------------
 
 ;; ------- Setup MELPA repository -------
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
+
 ;; --------------------------------------
+
+;; ------- Package initializations -------
+(require 'pkg-init)
+;; ---------------------------------------
