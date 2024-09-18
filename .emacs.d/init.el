@@ -23,6 +23,9 @@
 ;; ... if major mode forces tabs, set them to width=2
 (setq-default tab-width 2)
 
+;; set fill-column default to 80 chars
+(setq-default fill-column 80)
+
 ;; Assure that special input (like accent marks) works
 (require 'iso-transl)
 
