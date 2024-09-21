@@ -68,7 +68,7 @@
 
 ;; Setup font
 (add-to-list 'default-frame-alist
-             '(font . "Ubuntu Mono-12:weight=medium"))
+             '(font . "Ubuntu Sans Mono-12:weight=medium"))
 
 ;; -----------------------------------
 
