@@ -6,6 +6,7 @@
 ;; - Mark vertical line for char limit
 ;;   - https://emacs.stackexchange.com/questions/147/how-can-i-get-a-ruler-at-column-80
 ;; - Magit
+;; - Move lines up & down with M-up & M-down
 ;; - Customizable indentation
 ;; - Pair tags in html mode
 ;; - Full screen, text centered mode
