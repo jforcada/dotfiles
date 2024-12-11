@@ -27,6 +27,14 @@
 ;; set fill-column default to 80 chars
 (setq-default fill-column 80)
 
+;; set system bell off
+(setq ring-bell-function 'ignore)
+
+;; cd into work directory for Windows, because it defaults to emacs installation
+;; one
+(if (string= system-type "windows-nt")
+    (cd "c:/Users/elmal/work/"))
+
 ;; Assure that special input (like accent marks) works
 (require 'iso-transl)
 
@@ -56,9 +64,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4"
-     default))
- '(package-selected-packages nil))
+   '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))
+ '(package-selected-packages '(markdown-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
