@@ -74,10 +74,13 @@
  )
 (load-theme 'gotham t)
 
-;; Setup font
-(add-to-list 'default-frame-alist
-             '(font . "Ubuntu Sans Mono-12:weight=medium"))
-
+;; Setup font, in Windows the font is not parametherized by weight
+(if (string= system-type "windows-nt")
+    (add-to-list 'default-frame-alist
+                 '(font . "Ubuntu Sans Mono Medium-12"))
+  (add-to-list 'default-frame-alist
+               '(font . "Ubuntu Sans Mono-12:weight=medium"))
+  )
 
 ;; IDO Autocompletion
 (setq ido-enable-flex-matching t)
