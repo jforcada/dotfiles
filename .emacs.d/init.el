@@ -27,6 +27,9 @@
 ;; set fill-column default to 80 chars
 (setq-default fill-column 80)
 
+;; set Unix line termination char LF by default
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
 ;; set system bell off
 (setq ring-bell-function 'ignore)
 
