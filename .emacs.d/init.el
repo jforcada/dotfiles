@@ -6,7 +6,6 @@
 ;; - Mark vertical line for char limit
 ;;   - https://emacs.stackexchange.com/questions/147/how-can-i-get-a-ruler-at-column-80
 ;; - Magit
-;; - Move lines up & down with M-up & M-down
 ;; - Customizable indentation
 ;; - Pair tags in html mode
 ;; - Full screen, text centered mode
@@ -59,8 +58,7 @@
 
 ;; ---------------------------
 
-;; ------- Theme configuration -------
-;; Set up theme
+;; Set up theme and packages
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -68,7 +66,12 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))
- '(package-selected-packages '(markdown-mode)))
+
+ ;; Packages to be installed
+ ;; Note: You might need to run package-install-selected-packages
+ '(package-selected-packages '(markdown-mode ;; to edit .md files
+                               move-text ;; to move up/down lines and regions
+                               )))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
