@@ -69,8 +69,12 @@
 
  ;; Packages to be installed
  ;; Note: You might need to run package-install-selected-packages
- '(package-selected-packages '(markdown-mode ;; to edit .md files
+ '(package-selected-packages '(;; Major modes & complements
+                               markdown-mode ;; to edit .md files
+                               ;; Minor modes & complements
                                move-text ;; to move up/down lines and regions
+                               vertico ;; minibuffer autocompletion
+                               orderless ;; completion style
                                )))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -87,11 +91,6 @@
   (add-to-list 'default-frame-alist
                '(font . "Ubuntu Sans Mono-12:weight=medium"))
   )
-
-;; IDO Autocompletion
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
 
 ;; -----------------------------------
 
