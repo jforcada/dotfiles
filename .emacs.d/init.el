@@ -2,14 +2,6 @@
 ;; Author: Jaime Forcada Balaguer - jforcada
 ;; Email: jaime.forcada.balaguer@gmail.com
 
-;; TODO
-;; - Mark vertical line for char limit
-;;   - https://emacs.stackexchange.com/questions/147/how-can-i-get-a-ruler-at-column-80
-;; - Magit
-;; - Customizable indentation
-;; - Pair tags in html mode
-;; - Full screen, text centered mode
-
 ;; Define the directories to load resources from
 (defvar emacs.d-dir (file-name-directory load-file-name))
 (add-to-list 'load-path (concat emacs.d-dir "./general"))
