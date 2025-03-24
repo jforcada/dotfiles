@@ -2,12 +2,20 @@
 ;; Author: Jaime Forcada Balaguer - jforcada
 ;; Email: jaime.forcada.balaguer@gmail.com
 
-;; Package initialization
-;;
+;; ------- Packages to install -------
 
+;; Note: You might need to run package-install-selected-packages
+'(package-selected-packages '(;; Major modes & complements
+                              markdown-mode ;; to edit .md files
+                              ;; Minor modes & complements
+                              move-text ;; to move up/down lines and regions
+                              vertico ;; minibuffer autocompletion
+                              orderless ;; completion style
+                              ))
+(package-install-selected-packages)
 
-;; Major modes
-;; ----------------------------------
+;; -------
+;; ------- Major modes initialization -------
 
 (use-package markdown-mode
   :ensure t
@@ -16,10 +24,9 @@
   :bind (:map markdown-mode-map
          ("C-c C-e" . markdown-do)))
 
-;; ----------------------------------
+;; -------
 
-;; Minor modes
-;; ----------------------------------
+;; ------- Minor modes initialization -------
 
 (move-text-default-bindings)
 
@@ -37,10 +44,12 @@
   (savehist-mode))
 
 (use-package orderless
+  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-defaults nil)
   (completion-category-overrides '((file (styles partial-completion)))))
-;; ----------------------------------
+
+;; -------
 
 (provide 'pkg-init)

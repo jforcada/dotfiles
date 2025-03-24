@@ -57,17 +57,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))
+   '("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
 
- ;; Packages to be installed
- ;; Note: You might need to run package-install-selected-packages
- '(package-selected-packages '(;; Major modes & complements
-                               markdown-mode ;; to edit .md files
-                               ;; Minor modes & complements
-                               move-text ;; to move up/down lines and regions
-                               vertico ;; minibuffer autocompletion
-                               orderless ;; completion style
-                               )))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
