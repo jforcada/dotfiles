@@ -2,19 +2,46 @@
 ;; Author: Jaime Forcada Balaguer - jforcada
 ;; Email: jaime.forcada.balaguer@gmail.com
 
+
+;; ------- Setup -------
+
+;; Add MELPA repository
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+
+
+;; Init the package facility
+(require 'package)
+(package-initialize)
+
+;; --------------------------------------
+
 ;; ------- Packages to install -------
 
-;; Note: You might need to run package-install-selected-packages
-'(package-selected-packages '(;; Major modes & complements
-                              markdown-mode ;; to edit .md files
-                              ;; Minor modes & complements
-                              move-text ;; to move up/down lines and regions
-                              vertico ;; minibuffer autocompletion
-                              orderless ;; completion style
-                              ))
-(package-install-selected-packages)
+;; List of packages to install
+(setq my-packages
+      '(;; Themes
+        catppuccin-theme
+
+        ;; Major modes & complements
+        markdown-mode ;; to edit .md files
+
+        ;; Minor modes & complements
+        move-text ;; to move up/down lines and regions
+        vertico ;; minibuffer autocompletion
+        orderless ;; completion style
+        ))
+
+;; Iterate the list of packages and install them
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
 
 ;; -------
+
+;; ------- Themes -------
+(load-theme 'catppuccin :no-confirm)
+
 ;; ------- Major modes initialization -------
 
 (use-package markdown-mode
@@ -28,6 +55,7 @@
 
 ;; ------- Minor modes initialization -------
 
+;; Enable move-text
 (move-text-default-bindings)
 
 ;; Enable vertico
