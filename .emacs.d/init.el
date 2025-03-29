@@ -62,7 +62,7 @@
 
 ;; ------- Package setup & installation -------
 
-(require 'pkg-init)
+(require 'package-setup)
 
 ;; ---------------------------------------
 

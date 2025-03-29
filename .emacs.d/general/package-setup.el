@@ -6,13 +6,16 @@
 ;; ------- Setup -------
 
 ;; Add MELPA repository
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("melpa" . "https://melpa.org/packages/")))
 
 ;; Init the package facility
 (require 'package)
 (package-initialize)
+
+;; Update package list cache
+(package-refresh-contents)
 
 ;; --------------------------------------
 
@@ -80,4 +83,4 @@
 
 ;; -------
 
-(provide 'pkg-init)
+(provide 'package-setup)
