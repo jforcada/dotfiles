@@ -12,8 +12,8 @@
 
 ;; Disable tabs indentation by default...
 (setq-default indent-tabs-mode nil)
-;; ... if major mode forces tabs, set them to width=2
-(setq-default tab-width 2)
+;; ... if major mode forces tabs, set them to width=4
+(setq-default tab-width 4)
 
 ;; set fill-column default to 80 chars
 (setq-default fill-column 80)
@@ -63,6 +63,20 @@
 ;; ------- Package setup & installation -------
 
 (require 'package-setup)
+
+;; ---------------------------------------
+
+;; ------- Native included package configurations  -------
+
+;; Set C mode indentation to 4 spaces
+(setq-default c-basic-offset 4)
+
+;; Set func indentation arguments to just 1-level so it can be array-like when
+;; there are too many
+(defun my-c-mode-hook ()
+  (c-set-offset 'arglist-intro '+)
+  (c-set-offset 'arglist-close 0))
+(add-hook 'c-mode-hook 'my-c-mode-hook)
 
 ;; ---------------------------------------
 
