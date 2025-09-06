@@ -2,6 +2,15 @@
 
 Clone the repo into the `$HOME/work` directory.
 
+## Linux links
+
+```
+.emacs.d -> work/dotfiles/.emacs.d/
+.fonts -> work/dotfiles/.fonts/
+.gitconfig -> work/dotfiles/.gitconfig
+.Xdefaults -> work/dotfiles/.Xdefaults
+```
+
 ## Windows setup
 
 For **emacs** init directory, you should make a symbolic link:
