@@ -32,3 +32,23 @@ M-x list-packages
 ```
 
 2. Add the setup code of the package in the sections below the list.
+
+## Autocompletion
+
+Current autocompletion stack:
+
+1. corfu
+2. lsp-mode
+3. orderless
+
+### Autocompletion on C & C++
+
+Install `clangd` tool as a language server.
+
+- In Fedora: `$sudo dnf install clang-tools-extra`
+
+Make sure the path is correct in the lsp-mode configuration:
+
+```elisp
+(setq lsp-clients-clangd-executable "/usr/bin/clangd")
+```
