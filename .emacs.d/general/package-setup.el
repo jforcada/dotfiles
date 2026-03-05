@@ -28,6 +28,7 @@
 
         ;; Autocompletion
         corfu
+        cape
         lsp-mode
 
         ;; Major modes & complements
@@ -70,12 +71,16 @@
       corfu-preview-current 'insert
       corfu-quit-no-match 'separator) ;; or t
 
-(use-package lsp-mode
-  :custom
-  (lsp-completion-provider :none) ; Use Corfu instead of built-in autocompletion
-  :hook (lsp-completion-mode . my/lsp-mode-setup-completion))
+;; Add additional autocompletion sources with cape.
+(use-package cape
+  :config
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword))
 
+;; lsp-mode configurations
 (setq lsp-clients-clangd-executable "/usr/bin/clangd")
+(setq lsp-enable-snippet nil)
 
 ;; Enable autocompletion for major modes
 (add-hook 'c++-mode-hook #'lsp)
