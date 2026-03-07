@@ -2,6 +2,10 @@
 
 Clone the repo into the `$HOME/work` directory.
 
+## TODO
+
+Alacritty config: `~/.config/alacritty/alacritty.toml`
+
 ## Linux links
 
 ```
