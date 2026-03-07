@@ -26,6 +26,11 @@
       '(;; Themes
         catppuccin-theme
 
+        ;; Autocompletion
+        corfu
+        cape
+        lsp-mode
+
         ;; Major modes & complements
         markdown-mode ;; to edit .md files
 
@@ -44,6 +49,43 @@
 
 ;; ------- Themes -------
 (load-theme 'catppuccin :no-confirm)
+;; -------
+
+;; ------- Autocompletion -------
+(use-package corfu
+  :hook
+  (prog-mode . (lambda () (setq-local corfu-auto t)))
+  :init
+  (global-corfu-mode))
+
+(use-package emacs
+  :custom
+  (tab-always-indent 'complete)
+  (read-extended-command-predicate #'command-completion-default-include-p))
+
+;; Enable auto completion, configure delay, trigger and quitting
+(setq corfu-auto t
+      corfu-auto-delay 0.2
+      corfu-auto-prefix 2
+      corfu-auto-trigger "." ;; Custom trigger characters
+      corfu-preview-current 'insert
+      corfu-quit-no-match 'separator) ;; or t
+
+;; Add additional autocompletion sources with cape.
+(use-package cape
+  :config
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword))
+
+;; lsp-mode configurations
+(setq lsp-clients-clangd-executable "/usr/bin/clangd")
+(setq lsp-enable-snippet nil)
+
+;; Enable autocompletion for major modes
+(add-hook 'c++-mode-hook #'lsp)
+(add-hook 'c-mode-hook #'lsp)
+;; -------
 
 ;; ------- Major modes initialization -------
 
