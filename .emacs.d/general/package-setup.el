@@ -33,6 +33,7 @@
 
         ;; Major modes & complements
         markdown-mode ;; to edit .md files
+        cmake-mode ;; to edit CMakeLists.txt & .cmake files
 
         ;; Minor modes & complements
         move-text ;; to move up/down lines and regions
