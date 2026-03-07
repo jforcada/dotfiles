@@ -45,7 +45,8 @@ Current autocompletion stack:
 
 Install `clangd` tool as a language server.
 
-- In Fedora: `$sudo dnf install clang-tools-extra`
+- In Fedora: `$ sudo dnf install clang-tools-extra`
+- In Arch: `$ sudo pacman -S clang  # Already installed on Omarchy`
 
 Make sure the path is correct in the lsp-mode configuration:
 
