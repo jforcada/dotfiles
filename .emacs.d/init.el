@@ -69,7 +69,7 @@
 ;; ------- Native included package configurations  -------
 
 ;; Set C mode indentation to 4 spaces
-(setq-default c-basic-offset 4)
+(setq-default c-basic-offset 2)
 
 ;; Set func indentation arguments to just 1-level so it can be array-like when
 ;; there are too many
